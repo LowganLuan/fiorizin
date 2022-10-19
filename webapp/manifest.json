@@ -17,13 +17,8 @@
     },
     "dataSources": {
       "mainService": {
-        "uri": "/sap/opu/odata/",
-        "type": "OData",
-        "settings": {
-          "annotations": [],
-          "localUri": "localService/metadata.xml",
-          "odataVersion": "2.0"
-        }
+        "uri": "model/Invoices.json",
+        "type": "JSON"
       }
     }
   },
@@ -55,7 +50,8 @@
         "sap.ui.comp": {},
         "sap.ui.generic.app": {},
         "sap.ui.table": {},
-        "sap.ushell": {}
+        "sap.ushell": {},
+        "sap.ui.layout": {}
       }
     },
     "contentDensities": {

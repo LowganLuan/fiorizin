@@ -1,35 +1,31 @@
 <mvc:View controllerName="fiorizin.controller.Tela_Itens"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
-    xmlns:c="sap.ui.core"
-	xmlns:t="sap.ui.table"
-	xmlns:f="sap.ui.layout.form"
 	height="100%">
     <Page id="page" title="{i18n>title}">
-        <content> 
-            <VBox fitContainer="true">
-				
-				<IconTabBar upperCase="true" expandable="false" applyContentPadding="true" stretchContentHeight="true" class="sapUiResponsiveContentPadding">
-					<items>
-						<IconTabFilter text="Balances" />
-						<IconTabFilter text="Compare" />
-					</items>
-				<content>
-					<List headerText="{i18n>invoiceListTitle}"
-						class="sapUiResponsiveMargin"
-						width="auto"
-						items="{invoice>/Invoices}">
-						
-						<items>
-							<ObjectListItem title="{invoice>Quantity} x {invoice>ProductName}"/>
-						</items>
-					</List>
-				</content>
-					<layoutData>
-						<FlexItemData growFactor="1" baseSize="0%"/>
-					</layoutData>
-				</IconTabBar>
-			</VBox>
-        </content>
+       	<subHeader>
+			<OverflowToolbar id="search">
+				<ToolbarSpacer id="spaceToolbar"/>
+				<SearchField id="search1" liveChange=".onSearch" width="auto"  />
+			</OverflowToolbar>
+		</subHeader>
+		<List
+			id="idList"
+			items="{/Invoices}"
+			selectionChange=".onSelectionChange"
+			mode="MultiSelect"
+			growing="true"
+			growingThreshold="50"
+			includeItemInSelection="true">
+			<infoToolbar>
+				<OverflowToolbar visible="false" id="idInfoToolbar">
+					<Label id="idFilterLabel" />
+				</OverflowToolbar>
+			</infoToolbar>
+			<StandardListItem 
+				id="Stlist"
+				title="{ProductName}"
+				description="{Quantity}"/>
+		</List>
     </Page>
 </mvc:View>
