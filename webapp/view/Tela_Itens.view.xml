@@ -27,5 +27,14 @@
 				title="{ProductName}"
 				description="{Quantity}"/>
 		</List>
+<footer>	
+
+<Bar>
+ <contentRight>
+	<Button text="Create" press=".onSuccess"></Button>
+ </contentRight>
+
+</Bar>
+</footer>
     </Page>
 </mvc:View>

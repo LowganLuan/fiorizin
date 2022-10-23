@@ -2,12 +2,17 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"sap/ui/model/json/JSONModel"
+	"sap/ui/model/json/JSONModel",
+	"sap/m/MessageBox"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Filter, FilterOperator) {
+    function (Controller,
+	Filter,
+	FilterOperator,
+	JSONModel,
+	MessageBox) {
         "use strict";
 
         return Controller.extend("fiorizin.controller.Tela_Itens", {
@@ -48,6 +53,11 @@ sap.ui.define([
                 var sText = (bSelected) ? aContexts.length + " selected" : null;
                 oInfoToolbar.setVisible(bSelected);
                 oLabel.setText(sText);
+            },
+            onSuccess: function () {
+
+                MessageBox.success("Criado com sucesso");
+
             }
         });
     });
