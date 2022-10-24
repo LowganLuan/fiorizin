@@ -29,9 +29,9 @@
 		</List>
 <footer>	
 
-<Bar>
+<Bar id="_IDFooterBar">
  <contentRight>
-	<Button text="Create" press=".onSuccess"></Button>
+	<Button id="_ButtonCreate" text="Create" press=".onSuccess"></Button>
  </contentRight>
 
 </Bar>
